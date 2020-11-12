@@ -1,0 +1,29 @@
+{
+  "name": "gerenciador-de-renda-variavel",
+  "version": "1.0.0",
+  "description": "Projeto para a disciplina de Engenharia de Software 2020.3",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.2.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5",
+    "sequelize-auto-migrations": "github:scimonster/sequelize-auto-migrations#a063aa6535a3f580623581bf866cef2d609531ba",
+    "sqlite3": "^5.0.0",
+    "validator": "^13.1.17"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "sequelize-cli": "^6.2.0"
+  }
+}

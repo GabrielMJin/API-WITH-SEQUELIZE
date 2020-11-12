@@ -1,0 +1,148 @@
+{
+    "tables": {
+        "Investidors": {
+            "tableName": "Investidors",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "nome": {
+                    "field": "nome",
+                    "seqType": "Sequelize.STRING"
+                },
+                "email": {
+                    "field": "email",
+                    "seqType": "Sequelize.STRING"
+                },
+                "cpf": {
+                    "field": "cpf",
+                    "seqType": "Sequelize.STRING"
+                },
+                "senha": {
+                    "field": "senha",
+                    "seqType": "Sequelize.STRING"
+                },
+                "idade": {
+                    "field": "idade",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "Investimentos": {
+            "tableName": "Investimentos",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "nome": {
+                    "field": "nome",
+                    "seqType": "Sequelize.STRING"
+                },
+                "benchmark": {
+                    "field": "benchmark",
+                    "seqType": "Sequelize.STRING"
+                },
+                "tipo_investimento": {
+                    "field": "tipo_investimento",
+                    "seqType": "Sequelize.STRING"
+                },
+                "quantidade_papeis": {
+                    "field": "quantidade_papeis",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "valor_papel": {
+                    "field": "valor_papel",
+                    "seqType": "Sequelize.DOUBLE PRECISION"
+                },
+                "montante_investido": {
+                    "field": "montante_investido",
+                    "seqType": "Sequelize.DOUBLE PRECISION"
+                },
+                "indice": {
+                    "field": "indice",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "investidorId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "Investidors",
+                        "key": "id"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "investidorId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "Valors": {
+            "tableName": "Valors",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "valor": {
+                    "field": "valor",
+                    "seqType": "Sequelize.DOUBLE PRECISION"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "investimentoId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "Investimentos",
+                        "key": "id"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "field": "investimentoId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 2
+}
